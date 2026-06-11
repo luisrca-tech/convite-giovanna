@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+import { Button } from '@/components/ui/button';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Giovanna Site</title>
+	</head>
+	<body class="min-h-screen bg-background text-foreground">
+		<main class="container mx-auto flex min-h-screen flex-col items-center justify-center gap-6 p-8">
+			<h1 class="text-4xl font-bold tracking-tight">Giovanna Site</h1>
+			<p class="text-muted-foreground">Astro + React + Tailwind + shadcn/ui</p>
+			<Button client:load>Get Started</Button>
+		</main>
+	</body>
+</html>
