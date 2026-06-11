@@ -1,22 +1,48 @@
 ---
 import '../styles/global.css';
-import { Button } from '@/components/ui/button';
+import HeroSection from '@/components/sections/HeroSection.astro';
+import InviteSection from '@/components/sections/InviteSection.astro';
+import LinksSection from '@/components/sections/LinksSection.astro';
 ---
 
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Giovanna Site</title>
+		<title>Giovanna XV</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Caladea:wght@400;700&family=Great+Vibes&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
-	<body class="min-h-screen bg-background text-foreground">
-		<main class="container mx-auto flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-			<h1 class="text-4xl font-bold tracking-tight">Giovanna Site</h1>
-			<p class="text-muted-foreground">Astro + React + Tailwind + shadcn/ui</p>
-			<Button client:load>Get Started</Button>
+	<body class="overflow-hidden bg-black">
+		<main id="scroller" class="h-dvh overflow-hidden">
+			<HeroSection />
+			<InviteSection />
+			<LinksSection />
 		</main>
+
+		<script>
+			// Sections only change via link clicks — wheel/touch scroll stays locked
+			// by overflow:hidden; programmatic scrollIntoView still works.
+			document.querySelectorAll('a[data-nav]').forEach((link) => {
+				link.addEventListener('click', (event) => {
+					event.preventDefault();
+					const targetId = link.getAttribute('href');
+					if (!targetId) return;
+					const target = document.querySelector(targetId);
+					if (!target) {
+						console.error(`Navigation target not found: ${targetId}`);
+						return;
+					}
+					target.scrollIntoView({ behavior: 'smooth' });
+				});
+			});
+		</script>
 	</body>
 </html>
