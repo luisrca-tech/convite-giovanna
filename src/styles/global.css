@@ -19,10 +19,11 @@
 }
 
 :root {
-    /* Design canvas is 1080px wide (prints are scaled-down captures of it).
+    /* Design canvas is 1080x1920 (prints are scaled-down captures of it).
        All sizes from the design are multiplied by --s to keep print proportions
-       on any mobile width; capped so desktop doesn't blow up. */
-    --s: min(calc(100vw / 1080), 0.42px);
+       on any mobile width; the height term keeps full-height sections from
+       overflowing on short/wide viewports; capped so desktop doesn't blow up. */
+    --s: min(calc(100vw / 1080), calc(100dvh / 1920), 0.42px);
     --font-caladea: 'Caladea', serif;
     --font-great-vibes: 'Great Vibes', cursive;
     --font-juana: 'Juana', 'Caladea', serif;

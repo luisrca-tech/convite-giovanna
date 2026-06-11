@@ -1,7 +1,8 @@
 ---
-const iconClass = 'h-[calc(110*var(--s))] w-[calc(110*var(--s))] text-[#f6e7d3]';
+const iconClass =
+	"h-[calc(200*var(--s))] w-[calc(200*var(--s))] text-[#f6e7d3]";
 const linkClass =
-	'flex flex-col items-center gap-[calc(24*var(--s))] text-center';
+	"flex flex-col items-center gap-[calc(28*var(--s))] text-center";
 ---
 
 <section id="links" class="relative h-dvh w-full overflow-hidden bg-[#7b0016]">
@@ -11,8 +12,21 @@ const linkClass =
 		class="absolute inset-0 h-full w-full object-cover opacity-[0.28]"
 	/>
 
+	<img
+		src="/images/giovanna/gliter.png"
+		alt=""
+		aria-hidden="true"
+		class="pointer-events-none absolute top-[calc(60*var(--s))] left-[calc(-60*var(--s))] h-[calc(525*var(--s))] w-[111vw] max-w-none rotate-180"
+	/>
+	<img
+		src="/images/giovanna/gliter.png"
+		alt=""
+		aria-hidden="true"
+		class="pointer-events-none absolute bottom-[calc(-40*var(--s))] left-[calc(-60*var(--s))] h-[calc(525*var(--s))] w-[111vw] max-w-none -scale-x-100"
+	/>
+
 	<div
-		class="relative z-10 flex h-full flex-col justify-between px-[calc(70*var(--s))] py-[calc(110*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(42*var(--s))] leading-snug text-[#f6e7d3]"
+		class="relative z-10 flex h-full flex-col justify-between px-[calc(70*var(--s))] pb-[calc(150*var(--s))] pt-[calc(260*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(54*var(--s))] font-bold leading-snug text-[#f6e7d3]"
 	>
 		<div class="flex items-start justify-between">
 			<a href="#" class={linkClass}>
@@ -21,7 +35,7 @@ const linkClass =
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
-					stroke-width="1.5"
+					stroke-width="2"
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					class={iconClass}
@@ -36,17 +50,13 @@ const linkClass =
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
-					stroke-linecap="round"
-					stroke-linejoin="round"
+					fill="currentColor"
 					class={iconClass}
 				>
 					<path
-						d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+						fill-rule="evenodd"
+						d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0Zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
 					></path>
-					<circle cx="12" cy="10" r="3"></circle>
 				</svg>
 				<span>Localização</span>
 			</a>
@@ -58,44 +68,61 @@ const linkClass =
 			class="mx-auto w-[calc(560*var(--s))]"
 		/>
 
-		<div class="flex items-end justify-between">
+		<div class="flex items-start justify-between">
 			<a href="#" class={linkClass}>
-				<span>Quer me dar um<br />mimo? Aqui estão<br />meus tamanhos</span>
+				<span
+					>Quer me dar um<br />mimo? Aqui estão<br />meus tamanhos</span
+				>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
 					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					class={iconClass}
 				>
-					<rect x="3" y="8" width="18" height="4" rx="1"></rect>
-					<path d="M12 8v13"></path>
-					<path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
-					<path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"></path>
+					<path
+						fill="currentColor"
+						d="M4 8h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"
+					></path>
+					<path
+						fill="currentColor"
+						d="M5 13h14v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6Z"></path>
+					<path
+						stroke="currentColor"
+						stroke-width="2"
+						d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"
+					></path>
+					<path stroke="#7b0016" stroke-width="2" d="M12 8v13"></path>
 				</svg>
 			</a>
 
 			<a href="#" class={linkClass}>
-				<span>Deixe um recado<br />para gigi</span>
+				<span>Deixe um recado<br />para Gigi</span>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
 					fill="none"
-					stroke="currentColor"
-					stroke-width="1.5"
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					class={iconClass}
 				>
-					<path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"></path>
-					<path d="M2 6h4"></path>
-					<path d="M2 10h4"></path>
-					<path d="M2 14h4"></path>
-					<path d="M2 18h4"></path>
 					<path
+						fill="currentColor"
+						d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"
+					></path>
+					<path
+						stroke="currentColor"
+						stroke-width="2"
+						d="M2 6h4M2 10h4M2 14h4M2 18h4"></path>
+					<path
+						stroke="#7b0016"
+						stroke-width="1.5"
+						d="M8 7h8M8 11h8M8 15h5"></path>
+					<path
+						stroke="#7b0016"
+						stroke-width="1.5"
+						stroke-linejoin="round"
 						d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
 					></path>
 				</svg>
