@@ -21,27 +21,75 @@ import LinksSection from '@/components/sections/LinksSection.astro';
 		/>
 	</head>
 	<body class="overflow-hidden bg-black">
-		<main id="scroller" class="h-dvh overflow-hidden">
-			<HeroSection />
-			<InviteSection />
-			<LinksSection />
+		<main id="viewport" class="h-dvh overflow-hidden">
+			<div id="track" class="transition-transform duration-700 ease-in-out will-change-transform">
+				<HeroSection />
+				<InviteSection />
+				<LinksSection />
+			</div>
 		</main>
 
 		<script>
-			// Sections only change via link clicks — wheel/touch scroll stays locked
-			// by overflow:hidden; programmatic scrollIntoView still works.
+			// Navigation is state-driven instead of scroll-driven: the active section
+			// index moves the track by exact -100dvh steps via transform. Unlike a
+			// pixel scroll position, the dvh transform re-resolves whenever the
+			// viewport height changes (mobile URL bar, resize), so sections can never
+			// drift and bleed into each other.
+			const SECTION_IDS = ['hero', 'invite', 'links'];
+
+			const viewport = document.getElementById('viewport');
+			const track = document.getElementById('track');
+			if (!viewport || !track) throw new Error('Section viewport markup is missing');
+
+			const sections = SECTION_IDS.map((id) => {
+				const section = document.getElementById(id);
+				if (!section) throw new Error(`Section not found: #${id}`);
+				return section;
+			});
+
+			let current = -1;
+
+			function goTo(index: number, animate = true) {
+				if (index < 0 || index >= sections.length || index === current) return;
+				current = index;
+				if (!animate) track!.style.transition = 'none';
+				track!.style.transform = `translateY(${index * -100}dvh)`;
+				if (!animate) {
+					void track!.offsetHeight; // flush styles so the jump isn't animated
+					track!.style.transition = '';
+				}
+				// Inactive sections are inert so Tab can't focus offscreen links
+				// (focus would otherwise force a partial native scroll).
+				sections.forEach((section, i) => section.toggleAttribute('inert', i !== index));
+				history.replaceState(null, '', `#${SECTION_IDS[index]}`);
+			}
+
+			const initialIndex = SECTION_IDS.indexOf(location.hash.slice(1));
+			goTo(initialIndex === -1 ? 0 : initialIndex, false);
+
 			document.querySelectorAll('a[data-nav]').forEach((link) => {
 				link.addEventListener('click', (event) => {
 					event.preventDefault();
-					const targetId = link.getAttribute('href');
-					if (!targetId) return;
-					const target = document.querySelector(targetId);
-					if (!target) {
-						console.error(`Navigation target not found: ${targetId}`);
+					const targetId = (link.getAttribute('href') ?? '').replace('#', '');
+					const index = SECTION_IDS.indexOf(targetId);
+					if (index === -1) {
+						console.error(`Navigation target not found: #${targetId}`);
 						return;
 					}
-					target.scrollIntoView({ behavior: 'smooth' });
+					goTo(index);
 				});
+			});
+
+			window.addEventListener('hashchange', () => {
+				const index = SECTION_IDS.indexOf(location.hash.slice(1));
+				if (index !== -1) goTo(index);
+			});
+
+			// Browsers can still natively scroll an overflow:hidden container
+			// (find-in-page, some a11y tools); undo any stray scroll immediately.
+			viewport.addEventListener('scroll', () => {
+				viewport.scrollTop = 0;
+				viewport.scrollLeft = 0;
 			});
 		</script>
 	</body>
