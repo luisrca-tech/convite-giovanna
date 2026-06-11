@@ -1,5 +1,7 @@
 ---
 const iconClass = 'h-[calc(110*var(--s))] w-[calc(110*var(--s))] text-[#f6e7d3]';
+const linkClass =
+	'flex flex-col items-center gap-[calc(24*var(--s))] text-center';
 ---
 
 <section id="links" class="relative h-dvh w-full overflow-hidden bg-[#7b0016]">
@@ -13,7 +15,7 @@ const iconClass = 'h-[calc(110*var(--s))] w-[calc(110*var(--s))] text-[#f6e7d3]'
 		class="relative z-10 flex h-full flex-col justify-between px-[calc(70*var(--s))] py-[calc(110*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(42*var(--s))] leading-snug text-[#f6e7d3]"
 	>
 		<div class="flex items-start justify-between">
-			<a href="#" class="flex flex-col items-start gap-[calc(24*var(--s))]">
+			<a href="#" class={linkClass}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -30,7 +32,7 @@ const iconClass = 'h-[calc(110*var(--s))] w-[calc(110*var(--s))] text-[#f6e7d3]'
 				<span>Confirme<br />sua presença</span>
 			</a>
 
-			<a href="#" class="flex flex-col items-end gap-[calc(24*var(--s))] text-right">
+			<a href="#" class={linkClass}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -57,7 +59,7 @@ const iconClass = 'h-[calc(110*var(--s))] w-[calc(110*var(--s))] text-[#f6e7d3]'
 		/>
 
 		<div class="flex items-end justify-between">
-			<a href="#" class="flex flex-col items-start gap-[calc(24*var(--s))]">
+			<a href="#" class={linkClass}>
 				<span>Quer me dar um<br />mimo? Aqui estão<br />meus tamanhos</span>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +78,7 @@ const iconClass = 'h-[calc(110*var(--s))] w-[calc(110*var(--s))] text-[#f6e7d3]'
 				</svg>
 			</a>
 
-			<a href="#" class="flex flex-col items-end gap-[calc(24*var(--s))] text-right">
+			<a href="#" class={linkClass}>
 				<span>Deixe um recado<br />para gigi</span>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
