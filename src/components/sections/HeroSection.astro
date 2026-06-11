@@ -1,37 +1,40 @@
 ---
+
 ---
 
 <section
 	id="hero"
-	class="relative h-dvh w-full overflow-hidden bg-black bg-[url('/images/giovanna/background-page-1.png')] bg-cover bg-center"
+	class="relative flex h-dvh w-full flex-col overflow-hidden bg-black bg-[url('/images/giovanna/background-page-1.png')] bg-cover bg-center"
 >
-	<div class="pt-[11.5rem] pl-[1.5625rem]">
+	<div class="pt-[1.875rem] pl-[1.5625rem]">
 		<img
 			src="/images/giovanna/logo.png"
 			alt="Giovanna XV"
-			class="w-[calc(560*var(--s))] rounded-xl"
+			class="w-[calc(430*var(--s))] rounded-full"
 		/>
 	</div>
 
-	<a
-		href="#invite"
-		data-nav
-		class="mt-[calc(140*var(--s))] flex w-full flex-col items-center gap-[calc(24*var(--s))] text-center font-[family-name:var(--font-caladea)] text-[calc(35*var(--s))] text-pink-200"
-	>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			stroke-width="2"
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			class="h-[calc(90*var(--s))] w-[calc(90*var(--s))] text-pink-300"
+	<div class="flex flex-1 items-center justify-center">
+		<a
+			href="#invite"
+			data-nav
+			class="flex flex-col items-center gap-[calc(10*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(35*var(--s))] text-[#f3d9e3]"
 		>
-			<path
-				d="M13.234 20.252 21 12.3a6 6 0 0 0-8.5-8.5l-8.35 8.35a4 4 0 0 0 5.657 5.657l8.35-8.35a2 2 0 1 0-2.83-2.83l-7.78 7.78"
-			></path>
-		</svg>
-		<span>Clique aqui para abrir</span>
-	</a>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="1.8"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="h-[calc(170*var(--s))] w-[calc(170*var(--s))] rotate-12 text-[#f48fb8]"
+			>
+				<path
+					d="M13.234 20.252 21 12.3a6 6 0 0 0-8.5-8.5l-8.35 8.35a4 4 0 0 0 5.657 5.657l8.35-8.35a2 2 0 1 0-2.83-2.83l-7.78 7.78"
+				></path>
+			</svg>
+			<span class="text-center">Clique aqui para abrir</span>
+		</a>
+	</div>
 </section>
