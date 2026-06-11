@@ -9,13 +9,29 @@
 	<a
 		href="#invite"
 		data-nav
-		class="flex flex-col items-center gap-[calc(24*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(35*var(--s))] text-[#f3d9e3]"
+		aria-label="Clique aqui para abrir"
+		class="flex flex-col items-center gap-[calc(24*var(--s))]"
 	>
 		<img
 			src="/images/giovanna/logo.png"
 			alt="Giovanna XV"
-			class="w-[calc(430*var(--s))] rounded-full"
+			class="w-[calc(540*var(--s))] rounded-full"
 		/>
-		<span class="text-center">Clique aqui para abrir</span>
+		<svg
+			viewBox="-20 0 720 165"
+			class="block w-[calc(680*var(--s))] overflow-visible drop-shadow-[0_0_10px_rgba(243,217,227,0.45)]"
+			aria-hidden="true"
+		>
+			<path id="hero-open-arc" d="M -20 38 Q 340 148 700 38" fill="none"></path>
+			<text
+				class="font-[family-name:var(--font-juana)]"
+				fill="#f3d9e3"
+				font-size="52"
+				letter-spacing="3"
+				text-anchor="middle"
+			>
+				<textPath href="#hero-open-arc" startOffset="50%">Clique aqui para abrir</textPath>
+			</text>
+		</svg>
 	</a>
 </section>
