@@ -105,11 +105,11 @@ export default function InviteContent() {
 
 			<motion.footer
 				variants={itemVariants}
-				className="relative pb-[calc(150*var(--s))] font-[family-name:var(--font-juana)]"
+				className="relative pb-[calc(135*var(--s))] font-[family-name:var(--font-juana)]"
 			>
 				<svg
 					viewBox="0 0 700 160"
-					className="relative mx-auto block w-[calc(700*var(--s))] overflow-visible"
+					className="relative mx-auto block w-[calc(630*var(--s))] overflow-visible"
 					aria-hidden="true"
 				>
 					<defs>
@@ -129,8 +129,8 @@ export default function InviteContent() {
 					<text
 						className="invite-sabado-neon font-[family-name:var(--font-juana)] uppercase"
 						fill="#ffdfd9"
-						fontSize="100"
-						letterSpacing="12"
+						fontSize="90"
+						letterSpacing="11"
 						textAnchor="middle"
 						filter="url(#invite-sabado-neon)"
 					>
@@ -140,51 +140,51 @@ export default function InviteContent() {
 					</text>
 				</svg>
 
-				<div className="relative -mt-[calc(28*var(--s))] flex items-center justify-center gap-[calc(180*var(--s))]">
-					<span className="invite-footer-neon flex flex-col items-center gap-[calc(14*var(--s))] text-[calc(52*var(--s))] tracking-[0.14em] uppercase">
+				<div className="relative -mt-[calc(25*var(--s))] flex items-center justify-center gap-[calc(162*var(--s))]">
+					<span className="invite-footer-neon flex flex-col items-center gap-[calc(13*var(--s))] text-[calc(47*var(--s))] tracking-[0.14em] uppercase">
 						<img
 							src="/images/giovanna/light-line.png"
 							alt=""
-							className="block w-[calc(280*var(--s))] h-auto"
+							className="block w-[calc(252*var(--s))] h-auto"
 						/>
 						agosto
 						<img
 							src="/images/giovanna/light-line.png"
 							alt=""
-							className="block w-[calc(280*var(--s))] h-auto"
+							className="block w-[calc(252*var(--s))] h-auto"
 						/>
 					</span>
-					<span className="invite-footer-neon text-[calc(150*var(--s))] leading-none">15</span>
-					<span className="invite-footer-neon flex flex-col items-center gap-[calc(14*var(--s))] text-[calc(52*var(--s))] tracking-[0.14em]">
+					<span className="invite-footer-neon text-[calc(135*var(--s))] leading-none">15</span>
+					<span className="invite-footer-neon flex flex-col items-center gap-[calc(13*var(--s))] text-[calc(47*var(--s))] tracking-[0.14em]">
 						<img
 							src="/images/giovanna/light-line.png"
 							alt=""
-							className="block w-[calc(280*var(--s))] h-auto"
+							className="block w-[calc(252*var(--s))] h-auto"
 						/>
 						20:30
 						<img
 							src="/images/giovanna/light-line.png"
 							alt=""
-							className="block w-[calc(280*var(--s))] h-auto"
+							className="block w-[calc(252*var(--s))] h-auto"
 						/>
 					</span>
 				</div>
 
-				<p className="invite-footer-neon relative mt-[calc(24*var(--s))] text-center text-[calc(50*var(--s))] tracking-[0.2em] uppercase">
+				<p className="invite-footer-neon relative mt-[calc(22*var(--s))] text-center text-[calc(45*var(--s))] tracking-[0.2em] uppercase">
 					Espaço Green Place
 				</p>
 
 				<a
 					href="#links"
 					data-nav
-					className="invite-footer-neon absolute right-[calc(30*var(--s))] bottom-0 flex items-center gap-2 text-[calc(36*var(--s))] tracking-[0.14em] uppercase"
+					className="invite-footer-neon absolute right-[calc(30*var(--s))] bottom-0 flex items-center gap-2 text-[calc(32*var(--s))] tracking-[0.14em] uppercase"
 					aria-label="Clique aqui para ir à próxima sessão"
 				>
 					<span>Clique aqui</span>
 					<img
 						src="/images/giovanna/arrow-right.png"
 						alt=""
-						className="w-[calc(110*var(--s))] rotate-90"
+						className="w-[calc(99*var(--s))] rotate-90"
 					/>
 				</a>
 			</motion.footer>
