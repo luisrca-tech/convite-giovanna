@@ -105,7 +105,7 @@ export default function InviteContent() {
 
 			<motion.footer
 				variants={itemVariants}
-				className="relative pb-[calc(189*var(--s))] font-[family-name:var(--font-juana)]"
+				className="relative pb-[calc(150*var(--s))] font-[family-name:var(--font-juana)]"
 			>
 				<svg
 					viewBox="0 0 700 160"
@@ -140,7 +140,7 @@ export default function InviteContent() {
 					</text>
 				</svg>
 
-				<div className="relative -mt-[calc(16*var(--s))] flex items-center justify-center gap-[calc(180*var(--s))]">
+				<div className="relative -mt-[calc(28*var(--s))] flex items-center justify-center gap-[calc(180*var(--s))]">
 					<span className="invite-footer-neon flex flex-col items-center gap-[calc(14*var(--s))] text-[calc(52*var(--s))] tracking-[0.14em] uppercase">
 						<img
 							src="/images/giovanna/light-line.png"
@@ -170,7 +170,7 @@ export default function InviteContent() {
 					</span>
 				</div>
 
-				<p className="invite-footer-neon relative mt-[calc(41*var(--s))] text-center text-[calc(50*var(--s))] tracking-[0.2em] uppercase">
+				<p className="invite-footer-neon relative mt-[calc(24*var(--s))] text-center text-[calc(50*var(--s))] tracking-[0.2em] uppercase">
 					Espaço Green Place
 				</p>
 
