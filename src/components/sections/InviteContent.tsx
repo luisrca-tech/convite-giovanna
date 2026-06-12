@@ -84,11 +84,11 @@ export default function InviteContent() {
 				</svg>
 
 				<div className="relative z-10 flex flex-col items-center gap-[calc(10*var(--s))]">
-					<h1 className="invite-giovanna-neon relative font-[family-name:var(--font-great-vibes)] text-[calc(280*var(--s))] leading-none">
+					<h1 className="invite-giovanna-neon relative font-[family-name:var(--font-great-vibes)] text-[calc(252*var(--s))] leading-none">
 						Giovanna
 					</h1>
 					<div className="flex flex-col items-center gap-[calc(10*var(--s))]">
-						<p className="invite-xv-neon relative font-[family-name:var(--font-kelin)] text-[calc(140*var(--s))] leading-none">
+						<p className="invite-xv-neon relative font-[family-name:var(--font-kelin)] text-[calc(126*var(--s))] leading-none">
 							XV
 						</p>
 						<img
@@ -97,7 +97,7 @@ export default function InviteContent() {
 							className="block w-[calc(520*var(--s))] h-auto"
 						/>
 					</div>
-					<p className="relative text-center font-[family-name:var(--font-caladea)] text-[calc(52*var(--s))] leading-relaxed tracking-[0.14em] text-[#ff9cc6] uppercase drop-shadow-[0_0_10px_rgba(255,90,160,0.55)]">
+					<p className="relative text-center font-[family-name:var(--font-caladea)] text-[calc(47*var(--s))] leading-relaxed tracking-[0.14em] text-[#ff9cc6] uppercase drop-shadow-[0_0_10px_rgba(255,90,160,0.55)]">
 						Meus 15 anos<br />E eu quero você lá!
 					</p>
 				</div>
