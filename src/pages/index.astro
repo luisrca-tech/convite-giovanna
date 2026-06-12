@@ -65,10 +65,20 @@ const favicon = siteImage;
 			});
 
 			let current = -1;
+			let gestureLocked = false;
+			const GESTURE_COOLDOWN_MS = 700;
+			const WHEEL_THRESHOLD = 40;
+			const SWIPE_THRESHOLD = 50;
+			let wheelAccumulator = 0;
+			let touchStartY = 0;
+			let scrollBackEnabled = false;
+
+			const canScrollUp = () => scrollBackEnabled && current > 0;
 
 			function goTo(index: number, animate = true) {
 				if (index < 0 || index >= sections.length || index === current) return;
 				current = index;
+				if (index === sections.length - 1) scrollBackEnabled = true;
 				if (!animate) track!.style.transition = 'none';
 				track!.style.transform = `translateY(${index * -100}dvh)`;
 				if (!animate) {
@@ -109,6 +119,63 @@ const favicon = siteImage;
 			viewport.addEventListener('scroll', () => {
 				viewport.scrollTop = 0;
 				viewport.scrollLeft = 0;
+			});
+
+			function scrollToPreviousSection() {
+				if (!canScrollUp() || gestureLocked) return;
+				gestureLocked = true;
+				goTo(current - 1);
+				window.setTimeout(() => {
+					gestureLocked = false;
+				}, GESTURE_COOLDOWN_MS);
+			}
+
+			// No scroll until #links is reached; then upward scroll walks back invite → hero.
+			window.addEventListener(
+				'wheel',
+				(event) => {
+					event.preventDefault();
+					if (!canScrollUp() || event.deltaY > 0) return;
+
+					wheelAccumulator += event.deltaY;
+					if (wheelAccumulator > -WHEEL_THRESHOLD) return;
+					wheelAccumulator = 0;
+					scrollToPreviousSection();
+				},
+				{ passive: false },
+			);
+
+			window.addEventListener(
+				'touchstart',
+				(event) => {
+					touchStartY = event.touches[0]?.clientY ?? 0;
+				},
+				{ passive: true },
+			);
+
+			window.addEventListener(
+				'touchmove',
+				(event) => {
+					if (!canScrollUp()) {
+						event.preventDefault();
+						return;
+					}
+
+					const touchY = event.touches[0]?.clientY ?? touchStartY;
+					// Finger moving up = scroll down — always blocked.
+					if (touchY < touchStartY) event.preventDefault();
+				},
+				{ passive: false },
+			);
+
+			window.addEventListener('touchend', (event) => {
+				if (!canScrollUp()) return;
+
+				const touchEndY = event.changedTouches[0]?.clientY ?? touchStartY;
+				const deltaY = touchEndY - touchStartY;
+				if (deltaY < SWIPE_THRESHOLD) return;
+
+				scrollToPreviousSection();
 			});
 		</script>
 	</body>
