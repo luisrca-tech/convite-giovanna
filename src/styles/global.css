@@ -5,19 +5,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Juana and Kelin Eator are not on Google Fonts — drop the .woff2 files in public/fonts/ */
-@font-face {
-    font-family: 'Juana';
-    src: url('/fonts/Juana.woff2') format('woff2');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Kelin Eator';
-    src: url('/fonts/KelinEator.woff2') format('woff2');
-    font-display: swap;
-}
-
 :root {
     /* Design canvas is 1080x1920 (prints are scaled-down captures of it).
        All sizes from the design are multiplied by --s to keep print proportions
@@ -26,8 +13,8 @@
     --s: min(calc(100vw / 1080), calc(100dvh / 1920), 0.42px);
     --font-caladea: 'Caladea', serif;
     --font-great-vibes: 'Great Vibes', cursive;
-    --font-juana: 'Juana', 'Caladea', serif;
-    --font-kelin: 'Kelin Eator', 'Caladea', serif;
+    --font-juana: 'Playfair Display', 'Caladea', serif;
+    --font-kelin: 'Abril Fatface', 'Caladea', serif;
 }
 
 @theme inline {
