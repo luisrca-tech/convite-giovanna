@@ -32,7 +32,7 @@ export default function InviteContent() {
 			className="relative z-10 flex h-full flex-col justify-between"
 		>
 			<motion.header variants={itemVariants} className="relative pt-[calc(70*var(--s))]">
-				<h2 className="relative text-center font-[family-name:var(--font-caladea)] text-[calc(35*var(--s))] tracking-[0.18em] text-[#ff9cc6] uppercase drop-shadow-[0_0_8px_rgba(255,90,160,0.6)]">
+				<h2 className="invite-footer-neon relative text-center font-[family-name:var(--font-caladea)] text-[calc(35*var(--s))] tracking-[0.18em] uppercase">
 					Você é nosso convidado<br />para uma noite inesquecível!
 				</h2>
 			</motion.header>
@@ -97,7 +97,7 @@ export default function InviteContent() {
 							className="block w-[calc(520*var(--s))] h-auto"
 						/>
 					</div>
-					<p className="relative text-center font-[family-name:var(--font-caladea)] text-[calc(47*var(--s))] leading-relaxed tracking-[0.14em] text-[#ff9cc6] uppercase drop-shadow-[0_0_10px_rgba(255,90,160,0.55)]">
+					<p className="invite-footer-neon relative text-center font-[family-name:var(--font-caladea)] text-[calc(47*var(--s))] leading-relaxed tracking-[0.14em] uppercase">
 						Meus 15 anos<br />E eu quero você lá!
 					</p>
 				</div>
