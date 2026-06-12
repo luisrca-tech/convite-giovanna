@@ -112,21 +112,49 @@
 		</div>
 
 		<footer
-			class="relative pb-[calc(189*var(--s))] font-[family-name:var(--font-juana)] text-[#ffe3de]"
+			class="relative pb-[calc(189*var(--s))] font-[family-name:var(--font-juana)]"
 		>
 			<svg
 				viewBox="0 0 700 160"
-				class="relative mx-auto block w-[calc(700*var(--s))] overflow-visible drop-shadow-[0_0_12px_rgba(255,220,235,0.55)]"
+				class="relative mx-auto block w-[calc(700*var(--s))] overflow-visible"
 				aria-hidden="true"
 			>
+				<defs>
+					<filter
+						id="invite-sabado-neon"
+						x="-40%"
+						y="-40%"
+						width="180%"
+						height="180%"
+					>
+						<feGaussianBlur
+							stdDeviation="1.2"
+							result="blur-tight"></feGaussianBlur>
+						<feGaussianBlur
+							in="SourceGraphic"
+							stdDeviation="3.5"
+							result="blur-mid"></feGaussianBlur>
+						<feGaussianBlur
+							in="SourceGraphic"
+							stdDeviation="7"
+							result="blur-wide"></feGaussianBlur>
+						<feMerge>
+							<feMergeNode in="blur-wide"></feMergeNode>
+							<feMergeNode in="blur-mid"></feMergeNode>
+							<feMergeNode in="blur-tight"></feMergeNode>
+							<feMergeNode in="SourceGraphic"></feMergeNode>
+						</feMerge>
+					</filter>
+				</defs>
 				<path id="sabado-arc" d="M 40 140 Q 350 -10 660 140" fill="none"
 				></path>
 				<text
-					class="font-[family-name:var(--font-juana)] uppercase"
-					fill="#ffe3de"
+					class="invite-sabado-neon font-[family-name:var(--font-juana)] uppercase"
+					fill="#ffdfd9"
 					font-size="100"
 					letter-spacing="12"
 					text-anchor="middle"
+					filter="url(#invite-sabado-neon)"
 				>
 					<textPath href="#sabado-arc" startOffset="50%"
 						>Sábado</textPath
@@ -138,32 +166,35 @@
 				class="relative -mt-[calc(16*var(--s))] flex items-center justify-center gap-[calc(180*var(--s))]"
 			>
 				<span
-					class="flex flex-col items-center gap-[calc(14*var(--s))] text-[calc(52*var(--s))] tracking-[0.14em] uppercase"
+					class="invite-footer-neon flex flex-col items-center gap-[calc(14*var(--s))] text-[calc(52*var(--s))] tracking-[0.14em] uppercase"
 				>
 					<span
-						class="block h-[2px] w-[calc(250*var(--s))] bg-gradient-to-r from-transparent via-[#ffe3de] to-transparent"
+						class="block h-[2px] w-[calc(250*var(--s))] bg-gradient-to-r from-transparent via-[#ffdfd9] to-transparent"
 					></span>
 					agosto
 					<span
-						class="block h-[2px] w-[calc(250*var(--s))] bg-gradient-to-r from-transparent via-[#ffe3de] to-transparent"
+						class="block h-[2px] w-[calc(250*var(--s))] bg-gradient-to-r from-transparent via-[#ffdfd9] to-transparent"
 					></span>
 				</span>
-				<span class="text-[calc(120*var(--s))] leading-none">15</span>
 				<span
-					class="flex flex-col items-center gap-[calc(14*var(--s))] text-[calc(52*var(--s))] tracking-[0.14em]"
+					class="invite-footer-neon text-[calc(120*var(--s))] leading-none"
+					>15</span
+				>
+				<span
+					class="invite-footer-neon flex flex-col items-center gap-[calc(14*var(--s))] text-[calc(52*var(--s))] tracking-[0.14em]"
 				>
 					<span
-						class="block h-[2px] w-[calc(250*var(--s))] bg-gradient-to-r from-transparent via-[#ffe3de] to-transparent"
+						class="block h-[2px] w-[calc(250*var(--s))] bg-gradient-to-r from-transparent via-[#ffdfd9] to-transparent"
 					></span>
 					20:30
 					<span
-						class="block h-[2px] w-[calc(250*var(--s))] bg-gradient-to-r from-transparent via-[#ffe3de] to-transparent"
+						class="block h-[2px] w-[calc(250*var(--s))] bg-gradient-to-r from-transparent via-[#ffdfd9] to-transparent"
 					></span>
 				</span>
 			</div>
 
 			<p
-				class="relative mt-[calc(41*var(--s))] text-center text-[calc(50*var(--s))] tracking-[0.2em] uppercase"
+				class="invite-footer-neon relative mt-[calc(41*var(--s))] text-center text-[calc(50*var(--s))] tracking-[0.2em] uppercase"
 			>
 				Espaço Green Place
 			</p>
@@ -219,6 +250,27 @@
 			0 0 calc(34 * var(--s)) rgba(223, 14, 109, 0.48),
 			0 0 calc(46 * var(--s)) rgba(223, 14, 109, 0.32),
 			0 0 calc(60 * var(--s)) rgba(223, 14, 109, 0.2);
+	}
+
+	/* Canva Neon @ intensity 14: #ffdfd9 core + layered bloom (xv-neon structure scaled) */
+	.invite-footer-neon {
+		--neon: #ffdfd9;
+		color: #ffdfd9;
+		text-shadow:
+			0 0 calc(1 * var(--s)) #fff,
+			0 0 calc(1 * var(--s)) rgba(255, 255, 255, 0.85),
+			0 0 calc(1 * var(--s)) var(--neon),
+			0 0 calc(2 * var(--s)) var(--neon),
+			0 0 calc(3 * var(--s)) rgba(255, 223, 217, 0.95),
+			0 0 calc(5 * var(--s)) rgba(255, 223, 217, 0.88),
+			0 0 calc(7 * var(--s)) rgba(255, 223, 217, 0.78),
+			0 0 calc(9 * var(--s)) rgba(255, 223, 217, 0.62),
+			0 0 calc(12 * var(--s)) rgba(255, 223, 217, 0.48),
+			0 0 calc(14 * var(--s)) rgba(255, 223, 217, 0.35);
+	}
+
+	.invite-sabado-neon {
+		fill: #ffdfd9;
 	}
 
 	/* Canva Neon @ intensity 90: pale core + layered #ff0074 bloom */
