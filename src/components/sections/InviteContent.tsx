@@ -177,9 +177,10 @@ export default function InviteContent() {
 				<a
 					href="#links"
 					data-nav
-					className="absolute right-[calc(30*var(--s))] bottom-0"
-					aria-label="Ir para a próxima sessão"
+					className="invite-footer-neon absolute right-[calc(30*var(--s))] bottom-0 flex items-center gap-2 text-[calc(36*var(--s))] tracking-[0.14em] uppercase"
+					aria-label="Clique aqui para ir à próxima sessão"
 				>
+					<span>Clique aqui</span>
 					<img
 						src="/images/giovanna/arrow-right.png"
 						alt=""
