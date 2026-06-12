@@ -3,16 +3,33 @@ import '../styles/global.css';
 import HeroSection from '@/components/sections/HeroSection.astro';
 import InviteSection from '@/components/sections/InviteSection.astro';
 import LinksSection from '@/components/sections/LinksSection.astro';
+
+const siteTitle = 'Giovanna XV';
+const siteDescription =
+	'Você é nosso convidado para uma noite inesquecível! Convite digital dos 15 anos da Giovanna — sábado, 15 de agosto, às 20:30, no Espaço Green Place.';
+const siteImage = '/images/giovanna/logo.png';
+const favicon = siteImage;
 ---
 
 <html lang="pt-BR">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" href={favicon} />
+		<link rel="apple-touch-icon" href={favicon} />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Giovanna XV</title>
+		<title>{siteTitle}</title>
+		<meta name="description" content={siteDescription} />
+		<meta name="theme-color" content="#7b0016" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="pt_BR" />
+		<meta property="og:title" content={siteTitle} />
+		<meta property="og:description" content={siteDescription} />
+		<meta property="og:image" content={new URL(siteImage, Astro.url)} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={siteTitle} />
+		<meta name="twitter:description" content={siteDescription} />
+		<meta name="twitter:image" content={new URL(siteImage, Astro.url)} />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
