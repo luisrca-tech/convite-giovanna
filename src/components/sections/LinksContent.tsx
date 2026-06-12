@@ -85,7 +85,9 @@ export default function LinksContent() {
 					initial="hidden"
 					animate={state}
 					custom={2}
-					href="#"
+					href="https://www.google.com/maps/place/Green+Place+Festas+e+Eventos/@-16.7173295,-49.2954542,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef6d9eba6afe7:0xc823dc1a4e5d98e5!8m2!3d-16.7173295!4d-49.2954542!16s%2Fg%2F11g_qx1yp"
+					target="_blank"
+					rel="noopener noreferrer"
 					className={linkClass}
 				>
 					<svg
