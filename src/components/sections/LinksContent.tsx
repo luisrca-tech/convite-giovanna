@@ -1,8 +1,10 @@
 import { motion, type Variants } from 'motion/react';
 import { useSectionActive } from '@/lib/useSectionActive';
 
-const iconClass = 'h-[calc(200*var(--s))] w-[calc(200*var(--s))] text-[#f6e7d3]';
+const iconClass = 'h-[calc(170*var(--s))] w-[calc(170*var(--s))] shrink-0 text-[#f6e7d3]';
 const linkClass = 'flex flex-col items-center gap-[calc(28*var(--s))] text-center';
+const bottomLinkClass = `${linkClass} h-full`;
+const bottomIconClass = `${iconClass} mt-auto`;
 
 // Stagger order is decoupled from JSX order: each child uses `custom={n}` to
 // pick its slot in the sequence (globe first, then CTAs clockwise from top-left).
@@ -51,7 +53,7 @@ export default function LinksContent() {
 	return (
 		<div
 			ref={ref}
-			className="relative z-10 flex h-full flex-col justify-between px-[calc(70*var(--s))] pb-[calc(150*var(--s))] pt-[calc(260*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(54*var(--s))] font-bold leading-snug text-[#f6e7d3]"
+			className="relative z-10 flex h-full flex-col justify-between px-[calc(70*var(--s))] pb-[calc(150*var(--s))] pt-[calc(260*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(47*var(--s))] leading-snug text-[#f6e7d3]"
 		>
 			<div className="flex items-start justify-between">
 				<motion.a
@@ -128,14 +130,14 @@ export default function LinksContent() {
 				/>
 			</motion.div>
 
-			<div className="flex items-start justify-between">
+			<div className="flex items-stretch justify-between">
 				<motion.a
 					variants={ctaVariants}
 					initial="hidden"
 					animate={state}
 					custom={3}
 					href="#"
-					className={linkClass}
+					className={bottomLinkClass}
 				>
 					<span>
 						Quer me dar um<br />mimo? Aqui estão<br />meus tamanhos
@@ -146,7 +148,7 @@ export default function LinksContent() {
 						fill="none"
 						strokeLinecap="round"
 						strokeLinejoin="round"
-						className={iconClass}
+						className={bottomIconClass}
 					>
 						<path
 							fill="currentColor"
@@ -171,7 +173,7 @@ export default function LinksContent() {
 					animate={state}
 					custom={4}
 					href="#"
-					className={`${linkClass} gap-[calc(40*var(--s))]`}
+					className={bottomLinkClass}
 				>
 					<span>
 						Deixe um recado<br />para Gigi
@@ -182,7 +184,7 @@ export default function LinksContent() {
 						fill="none"
 						strokeLinecap="round"
 						strokeLinejoin="round"
-						className={iconClass}
+						className={bottomIconClass}
 					>
 						<path
 							fill="currentColor"
