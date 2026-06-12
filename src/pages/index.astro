@@ -67,17 +67,19 @@ import LinksSection from '@/components/sections/LinksSection.astro';
 			const initialIndex = SECTION_IDS.indexOf(location.hash.slice(1));
 			goTo(initialIndex === -1 ? 0 : initialIndex, false);
 
-			document.querySelectorAll('a[data-nav]').forEach((link) => {
-				link.addEventListener('click', (event) => {
-					event.preventDefault();
-					const targetId = (link.getAttribute('href') ?? '').replace('#', '');
-					const index = SECTION_IDS.indexOf(targetId);
-					if (index === -1) {
-						console.error(`Navigation target not found: #${targetId}`);
-						return;
-					}
-					goTo(index);
-				});
+			// Delegation on the document so links rendered later by React islands
+			// (e.g. the invite footer arrow) still trigger navigation.
+			document.addEventListener('click', (event) => {
+				const link = (event.target as Element | null)?.closest('a[data-nav]');
+				if (!link) return;
+				event.preventDefault();
+				const targetId = (link.getAttribute('href') ?? '').replace('#', '');
+				const index = SECTION_IDS.indexOf(targetId);
+				if (index === -1) {
+					console.error(`Navigation target not found: #${targetId}`);
+					return;
+				}
+				goTo(index);
 			});
 
 			window.addEventListener('hashchange', () => {
