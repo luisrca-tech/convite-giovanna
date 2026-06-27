@@ -95,14 +95,14 @@ export default function GiftSizesDialog({
 			</DialogTrigger>
 
 			<DialogContent
-				className="max-w-[min(92vw,28rem)] gap-[calc(36*var(--s))] rounded-2xl border border-[#f6e7d3]/25 bg-[#7b0016] p-[calc(48*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(38*var(--s))] leading-snug text-[#f6e7d3] ring-[#f6e7d3]/15 sm:max-w-md [&_[data-slot=dialog-close]]:text-[#f6e7d3] [&_[data-slot=dialog-close]]:hover:bg-[#f6e7d3]/10"
+				className="max-w-[min(92vw,28rem)] gap-[calc(36*var(--s))] rounded-2xl border border-[#f6e7d3]/25 bg-[#7b0016] p-[calc(48*var(--s))] font-[family-name:var(--font-caladea)] text-[calc(44*var(--s))] leading-snug text-[#f6e7d3] ring-[#f6e7d3]/15 sm:max-w-md [&_[data-slot=dialog-close]]:text-[#f6e7d3] [&_[data-slot=dialog-close]]:hover:bg-[#f6e7d3]/10"
 				showCloseButton
 			>
 				<DialogHeader className="gap-[calc(28*var(--s))] text-center">
-					<DialogTitle className="font-[family-name:var(--font-caladea)] text-[calc(42*var(--s))] leading-snug font-normal text-[#f6e7d3]">
+					<DialogTitle className="font-[family-name:var(--font-caladea)] text-[calc(48*var(--s))] leading-snug font-normal text-[#f6e7d3]">
 						Sua presença é o meu maior presente! 💖
 					</DialogTitle>
-					<DialogDescription className="text-[calc(38*var(--s))] leading-snug text-[#f6e7d3]/90">
+					<DialogDescription className="text-[calc(44*var(--s))] leading-snug text-[#f6e7d3]/90">
 						Mas, caso deseje me presentear, deixo algumas sugestões:
 					</DialogDescription>
 				</DialogHeader>
@@ -111,7 +111,7 @@ export default function GiftSizesDialog({
 					{sizeTips.map(({ icon: Icon, text }, index) => (
 						<li key={index} className="flex items-start gap-[calc(20*var(--s))]">
 							<Icon
-								className="mt-[calc(4*var(--s))] size-[calc(52*var(--s))] shrink-0 text-[#f6e7d3]"
+								className="mt-[calc(4*var(--s))] size-[calc(58*var(--s))] shrink-0 text-[#f6e7d3]"
 								strokeWidth={1.75}
 								aria-hidden
 							/>
@@ -120,7 +120,7 @@ export default function GiftSizesDialog({
 					))}
 				</ul>
 
-				<p className="text-center text-[calc(38*var(--s))] leading-snug text-[#f6e7d3]">
+				<p className="text-center text-[calc(44*var(--s))] leading-snug text-[#f6e7d3]">
 					Todo carinho será recebido com muito amor! ✨
 				</p>
 			</DialogContent>
