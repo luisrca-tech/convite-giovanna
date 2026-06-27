@@ -1,4 +1,5 @@
 import { motion, type Variants } from 'motion/react';
+import GiftSizesDialog from '@/components/sections/GiftSizesDialog';
 import { useSectionActive } from '@/lib/useSectionActive';
 
 const iconClass = 'h-[calc(170*var(--s))] w-[calc(170*var(--s))] shrink-0 text-[#f6e7d3]';
@@ -61,7 +62,9 @@ export default function LinksContent() {
 					initial="hidden"
 					animate={state}
 					custom={1}
-					href="#"
+					href="https://sites.wedy.com/xv-giovanna-ioys/confirmacao-de-presenca"
+					target="_blank"
+					rel="noopener noreferrer"
 					className={linkClass}
 				>
 					<svg
@@ -131,48 +134,22 @@ export default function LinksContent() {
 			</motion.div>
 
 			<div className="flex items-stretch justify-between">
-				<motion.a
+				<GiftSizesDialog
 					variants={ctaVariants}
-					initial="hidden"
 					animate={state}
 					custom={3}
-					href="#"
 					className={bottomLinkClass}
-				>
-					<span>
-						Quer me dar um<br />mimo? Aqui estão<br />meus tamanhos
-					</span>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						fill="none"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						className={bottomIconClass}
-					>
-						<path
-							fill="currentColor"
-							d="M4 8h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Z"
-						/>
-						<path
-							fill="currentColor"
-							d="M5 13h14v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6Z"
-						/>
-						<path
-							stroke="currentColor"
-							strokeWidth="2"
-							d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"
-						/>
-						<path stroke="#7b0016" strokeWidth="2" d="M12 8v13" />
-					</svg>
-				</motion.a>
+					iconClassName={bottomIconClass}
+				/>
 
 				<motion.a
 					variants={ctaVariants}
 					initial="hidden"
 					animate={state}
 					custom={4}
-					href="#"
+					href="https://sites.wedy.com/xv-giovanna-ioys/mural-de-recados"
+					target="_blank"
+					rel="noopener noreferrer"
 					className={bottomLinkClass}
 				>
 					<span>
